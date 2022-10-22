@@ -1,4 +1,4 @@
-salary = input("What is your current salary?:")
+salary = input("What is your current annual salary?:")
 years = input("How many years have you worked here?:")
 
 if int(years) >= 5:
