@@ -1,6 +1,5 @@
 salary = input("What is your current annual salary?:")
 years = input("How many years have you worked here?:")
-
 if int(years) >= 5:
     finalSalary = (int(salary) * 0.05) + int(salary)
     print(finalSalary, "is your new annual salary")
