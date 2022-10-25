@@ -13,7 +13,15 @@ class MyTestCase(unittest.TestCase):
         # when you are ready to write your tests, go ahead and delete pass
         pass
 
-from bonus import
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+from bonus import calculator
+class SimpleTest(unittest.TestCase):
+    def test_calculator(self):
+        self.assertTrue(True)
 
 if __name__ == '__main__':
     unittest.main()
