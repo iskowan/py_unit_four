@@ -1,14 +1,19 @@
+import random
 def max(num1, num2):
     if num1 > num2:
-        print(num1, "is greater than", num2)
         #return num1
+        return(str(num1) + " is greater than" + str(num2))
     else:
-        print(num2, "is greater than", num1)
-        #return num2
+        return(str(num2), " is greater than", str(num1))
+    '''
+    if num1 < num2
+        return num2
+    '''
 
 def main():
-    getNum1 = input("Give one random number:")
-    getNum2 = input("Give another random number:")
-    max(getNum1, getNum2)
+    num1 = random.randint(-10, 10)
+    num2 = random.randint(-10, 10)
+    print(max(num1, num2))
+    #return functions allow there to be less print functions
 
 main()

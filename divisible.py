@@ -1,4 +1,10 @@
 def is_divisible(num1, num2):
+    if is_divisible(num1, num2):
+        num1 % num2 == 0
+        print(num1, "is divisible by ", num2)
+    else:
+        print(num1, "is not divisible by ", num2)
+
     """
     Checks to see if one number is evenly divisible by the second
     :param num1: The number being tested
