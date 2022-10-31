@@ -1,9 +1,8 @@
-def is_divisible(num1, num2):
-    if is_divisible(num1, num2):
-        num1 % num2 == 0
-        print(num1, "is divisible by ", num2)
+def is_divisible(num, check):
+    if int(num) % (check) == 0:
+        return True
     else:
-        print(num1, "is not divisible by ", num2)
+        return False
 
     """
     Checks to see if one number is evenly divisible by the second
