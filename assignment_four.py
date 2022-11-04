@@ -2,6 +2,7 @@
 #Unit 4 Option 1
 #Ace = 1
 import random
+
 def get_card():
     return random.randint(1,10)
 def user_total():
@@ -9,25 +10,31 @@ def user_total():
     user_card2 = get_card()
     user_card_total = user_card1 + user_card2
     print("Your cards are", user_card1, "and", user_card2, "with a total of", user_card_total)
+    return user_card_total
 
 def dealer_total():
     dealer_card1 = get_card()
     dealer_card2 = get_card()
+    dealer_card_total = dealer_card1 + dealer_card2
+    print("Dealer total", dealer_card_total)
 
-def new_card():
-    get_new_card = input("Would you like to draw another card?:")
-    if get_new_card == "yes" or "Yes":
-        print(get_card())
-    elif get_new_card == "no" or "No":
-        print("Ok, your total is" '', 'user_card_total''')
+def get_new_card():
+    new_card = input("Would you like to draw another card?:")
+    if new_card == str("Yes") or str("yes"):
+        new_draw_card = get_card()
+        new_user_total = user_card_total + new_draw_card
+        '''                 ^^How do I get this to work here'''
+        print("Your new total is", new_user_total)
+        print(new_draw_card)
+    elif new_card == str("No") or str("no"):
+        print("Ok, your total is:")
     else:
-        print("Sorry there was an Error")
-        new_card()
+        print("There was an error")
 
 def main():
     user_total()
+    get_new_card()
     dealer_total()
-    new_card()
 
 main()
 
