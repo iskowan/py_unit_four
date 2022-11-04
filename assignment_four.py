@@ -2,7 +2,6 @@
 #Unit 4 Option 1
 #Ace = 1
 import random
-
 def get_card():
     return random.randint(1,10)
 '''
@@ -41,6 +40,10 @@ def get_winner():
         print("You both went over 21")
     elif user_total == dealer_total:
         print("You tied")
+    elif user_total > 21:
+        print("You lose")
+    elif user_total < 21:
+        print("You win")
 
 def main():
     current = 0
@@ -50,7 +53,7 @@ def main():
         print("Your total is", user_total(current))
     else:
         print("Your total is", current, "lets see what the dealer's total is...")
-    dealer_total()
+    get_winner()
 
 main()
 
