@@ -5,12 +5,16 @@ import random
 
 def get_card():
     return random.randint(1,10)
+'''
 def user_total():
     user_card1 = get_card()
     user_card2 = get_card()
-    user_card_total = user_card1 + user_card2
-    print("Your cards are", user_card1, "and", user_card2, "with a total of", user_card_total)
-    return user_card_total
+    return user_card1 + user_card2
+'''
+def user_total(current):
+    card = get_card()
+    print("You drew a", card)
+    return current + card
 
 def dealer_total():
     dealer_card1 = get_card()
@@ -18,26 +22,37 @@ def dealer_total():
     dealer_card_total = dealer_card1 + dealer_card2
     print("Dealer total", dealer_card_total)
 
+'''
 def get_new_card():
     new_card = input("Would you like to draw another card?:")
     if new_card == str("Yes") or str("yes"):
         new_draw_card = get_card()
-        new_user_total = user_card_total + new_draw_card
-        '''                 ^^How do I get this to work here'''
+        print(user_total)
+        new_user_total = user_total + new_draw_card
         print("Your new total is", new_user_total)
         print(new_draw_card)
     elif new_card == str("No") or str("no"):
         print("Ok, your total is:")
     else:
         print("There was an error")
+'''
+def get_winner():
+    if user_total < 21 and dealer_total < 21:
+        print("You both went over 21")
+    elif user_total == dealer_total:
+        print("You tied")
 
 def main():
-    user_total()
-    get_new_card()
+    current = 0
+    current = user_total(current)
+    get_another_card = input("Would you like another card?")
+    if get_another_card == "yes" or "Yes" or "y" or "Y":
+        print("Your total is", user_total(current))
+    else:
+        print("Your total is", current, "lets see what the dealer's total is...")
     dealer_total()
 
 main()
-
 
 
 '''
