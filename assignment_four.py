@@ -5,6 +5,7 @@ import random
 def get_card():
     return random.randint(1,10)
 
+'''
 def user_card_hand(current):
     card = get_card()
     print("You got a", card)
@@ -13,6 +14,7 @@ def user_card_hand(current):
     hand_total = card + card2
     print("Your total is", hand_total)
     return hand_total + current
+'''
 def user_total(current):
     card = get_card()
     print("You drew a", card)
@@ -25,7 +27,8 @@ def dealer_total():
     print("Dealer total", dealer_card_total)
 
 def get_another_card():
-    input("Would you like another card?")
+    input("Would you like another card?:")
+
 
 def get_winner():
     if user_total < 21 and dealer_total < 21:
@@ -39,13 +42,11 @@ def get_winner():
 
 def main():
     current = 0
-    current = user_card_hand(current)
-    get_another_card()
-    while (get_another_card == "yes" or "Yes" or "Y" or "y"):
+    current = user_total(current)
+    if get_another_card == "yes" or "Yes" or "Y" or "y":
         ''' this allows the function to repeat by continuing the function if it is true/"yes" '''
         print("Your total is", user_total(current))
         get_another_card()
-        if (get_another_card == "no" or "No" or "N" or "n"):
-            print("Your total is", current, "lets see what the dealer's total is...")
-    get_winner()
+    elif get_another_card == "no" or "No" or "N" or "n":
+        print("Your total is", current, "lets see what the dealer's total is...", dealer_total())
 main()
