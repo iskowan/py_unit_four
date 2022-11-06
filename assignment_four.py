@@ -24,7 +24,17 @@ def draw_card(current):
 def dealer_total():
     card1 = get_card()
     card2 = get_card()
-    return card1 + card2
+    '''
+    if card1 + card2 > 21:
+        print("The dealer loses")
+    if 0 < card1 + card2 < 10:
+        card3 = get_card()
+        return card1 + card2 + card3
+    if 0 < card1 + card2 < 15:
+        return
+'''
+
+'''def dealer_card_draw():'''
 
 def get_another_card():
     current = 0
