@@ -24,17 +24,7 @@ def draw_card(current):
 def dealer_total():
     card1 = get_card()
     card2 = get_card()
-    '''
-    if card1 + card2 > 21:
-        print("The dealer loses")
-    if 0 < card1 + card2 < 10:
-        card3 = get_card()
-        return card1 + card2 + card3
-    if 0 < card1 + card2 < 15:
-        return
-'''
-
-'''def dealer_card_draw():'''
+    return card1 + card2
 
 def get_another_card():
     current = 0
@@ -45,7 +35,7 @@ def get_another_card():
         #print("Your total is", user_card_hand + card)
         get_another_card()
     elif draw == "no":
-        print("The dealers total is...", dealer_total)
+        print("The dealers total is", dealer_total)
 
 def get_winner():
     if user_total < 21 and dealer_total < 21:
