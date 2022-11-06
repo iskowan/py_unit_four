@@ -46,7 +46,8 @@ def get_winner():
         print("You lose")
     elif user_total < 21 and dealer_total < user_total:
         print("You win")
-
+    elif user_total < 21 and dealer_total > user_total:
+        print("You lose")
 def main():
     current = 0
     user_card_hand(current)
