@@ -1,6 +1,5 @@
 # Anderson Iskowitz
 #Unit 4 Option 1
-#Ace = 1
 import random
 def get_card():
     return random.randint(1,10)
@@ -37,6 +36,7 @@ def get_another_card():
         get_another_card()
     elif draw == "no":
         print("The dealers total is...", dealer_total)
+
 def get_winner():
     if user_total < 21 and dealer_total < 21:
         print("You both went over 21")
@@ -51,5 +51,6 @@ def main():
     current = 0
     user_card_hand(current)
     get_another_card()
+    #get_winner()
 
 main()
