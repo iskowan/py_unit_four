@@ -35,8 +35,5 @@ def main():
     current2 = get_another_card(current)
     if current2 == "yes":
         user = get_another_card(current2)
-    else:
-        print("The dealers total is", dealer_total)
-    ''' asking the user if they want to draw another card, if they do, this automatically repeats '''
 
 main()
