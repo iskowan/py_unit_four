@@ -32,7 +32,7 @@ def get_another_card(current):
         print("The dealers total is", dealer_total)
 
 def get_winner(user, dealer):
-    if user < 21 and dealer < 21:
+    if user > 21 and dealer > 21:
         print("You both lose")
     elif user == dealer:
         print("You tied")
@@ -48,6 +48,6 @@ def main():
     current = user_card_hand()
     ''' drawing two cards and adding them to the current total'''
     user_total = get_another_card(current)
-    get_winner(user_total, dealer_total)
+    #get_winner(user_total, dealer_total)
 
 main()
