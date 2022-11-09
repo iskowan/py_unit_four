@@ -169,6 +169,5 @@ def main():
     print("Your total is", user_total1)
     '''calling get winner to print the winner'''
     get_winner(user_total1, dealers_total)
-
 '''calling main function'''
 main()
