@@ -5,6 +5,7 @@ def get_card():
     return random.randint(1, 10)
 ''' getting a random value between 1 and 10 '''
 def user_card_hand():
+    '''Setting up the user's hand'''
     card = get_card()
     print("You got a", card)
     card2 = get_card()
@@ -13,17 +14,24 @@ def user_card_hand():
     print("Your total is", hand_total)
     return hand_total
 def draw_card():
+    '''function to draw a card'''
     card = get_card()
     return card
 def dealer_total():
+    '''setting up the dealer's hand'''
     card1 = get_card()
     card2 = get_card()
     card_total = card1 + card2
-    if card_total < 17:
+    if card_total <= 15:
         card3 = get_card()
-        return card_total + card3
+        new_card_total = card_total + card3
+        if new_card_total <= 15:
+            card4 = get_card()
+            total = new_card_total + card4
+            return total
     return card_total
 def get_another_card(current):
+    '''gets more cards if needed/wanted'''
     draw = input("Would you like another card?")
     if draw == "yes":
         card = draw_card()
@@ -32,9 +40,9 @@ def get_another_card(current):
         print("Your total is", total)
         return total
     elif draw == "no":
-        print("The dealers total is", dealer_total)
-
+        return current
 def get_winner(user, dealer):
+    '''compares the user total to the dealer total to calcualte the winner'''
     if user > 21 and dealer > 21:
         print("You both lose")
     elif user == dealer:
@@ -45,15 +53,18 @@ def get_winner(user, dealer):
         print("You Win")
     elif user < 21 and user < dealer:
         print("You lose")
-
 def main():
-    ''' making the value of the cards 0 because you start out with no cards'''
+    '''calling user_card_hand and naming it "current" '''
     current = user_card_hand()
-    ''' drawing two cards and adding them to the current total'''
-    user_total = get_another_card(current)
-    get_another_card(current)
+    '''asking user if they want another card'''
+    user_total1 = get_another_card(current)
+    '''naming dealer_total()'''
     dealers_total = dealer_total()
-    print("Dealer Total:", dealers_total)
-    get_winner(user_total, dealers_total)
+    '''printing the dealer and user total'''
+    print("Dealer's Total is", dealers_total)
+    print("Your total is", user_total1)
+    '''calling get winner to print the winner'''
+    get_winner(user_total1, dealers_total)
 
+'''calling main function'''
 main()
