@@ -19,6 +19,9 @@ def dealer_total():
     card1 = get_card()
     card2 = get_card()
     card_total = card1 + card2
+    if card_total < 17:
+        card3 = get_card()
+        return card_total + card3
     return card_total
 def get_another_card(current):
     draw = input("Would you like another card?")
@@ -27,7 +30,7 @@ def get_another_card(current):
         print("You drew a", card)
         total = current + card
         print("Your total is", total)
-        return get_another_card(total)
+        return total
     elif draw == "no":
         print("The dealers total is", dealer_total)
 
@@ -48,6 +51,9 @@ def main():
     current = user_card_hand()
     ''' drawing two cards and adding them to the current total'''
     user_total = get_another_card(current)
-    #get_winner(user_total, dealer_total)
+    get_another_card(current)
+    dealers_total = dealer_total()
+    print("Dealer Total:", dealers_total)
+    get_winner(user_total, dealers_total)
 
 main()
