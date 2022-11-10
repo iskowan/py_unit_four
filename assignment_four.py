@@ -132,6 +132,11 @@ def dealer_total():
             card4 = get_card()
             print("The dealer drew a", card4)
             total = new_card_total + card4
+            if total <=15:
+                card5 = get_card()
+                print("The dealer drew a", card5)
+                new_total = total + card5
+                return new_total
             return total
     return card_total
 def get_another_card(current):
